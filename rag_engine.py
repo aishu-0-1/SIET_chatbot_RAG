@@ -19,8 +19,8 @@ def create_Chunks(full_text, chunksize = 500, overlap=100):
   start = 0
   while start<len(full_text):       #0<1000           400<1000         800<1000
     end = strat + chunksize         #500              400+500=900      800+500=1300
-    chunk = full_text[start:end]    #[0:500]          [400:900]        [800:1300]
-    if chunk.strip():
+    chunks = full_text[start:end]    #[0:500]          [400:900]        [800:1300]
+    if chunks.strip():
       chunks.append(chunk)
     start = end - overlap     #500-100=400       900-100=800      1300-100=1200
   return chunks
@@ -39,7 +39,7 @@ def build_vectors (chunks, model_name = "all-MiniLM-L6-v2"):
 #call loadpdf, chunk, embedding
 def load_base (Pdf_path = "01_College_Information.pdf"):
   full_text = load_pdf(Pdf_path)
-  chunks = create_chunk(full_text)
+  chunks = create_chunks(full_text)
   index, embed_model = buil_vectors(chunks)
   return index, embed_model, chunks
 

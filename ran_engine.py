@@ -1,13 +1,13 @@
 import faiss
 import numpy as np
 from groq import Groq
-from pypdf import PDFReader
+from pypdf import PdfReader
 from sentence_tranformers import SentenceTransformer
 
 
 #load pdfs
 def load_pdf(pdd_path):
-  reader = PDFReader(str(pdf_path))
+  reader = PDFReader(str(pdf_path)) 
   mypages = [i.extract_text() or "" for i in reader.pages]
   full_text ="\n".join(mypages).strip()
   if not  full_text:

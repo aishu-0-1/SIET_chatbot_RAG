@@ -1,5 +1,5 @@
 
-import faiss
+import fais
 import numpy as np
 from groq import Groq
 from pypdf import PdfReader

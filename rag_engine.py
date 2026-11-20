@@ -39,7 +39,7 @@ def build_vectors (chunks, model_name = "all-MiniLM-L6-v2"):
 #call loadpdf, chunk, embedding
 def load_base (Pdf_path = "01_College_Information.pdf"):
   full_text = load_pdf(Pdf_path)
-  chunks = create_chunks(full_text)
+  chunks = create_chunk(full_text)
   index, embed_model = buil_vectors(chunks)
   return index, embed_model, chunks
 

@@ -5,7 +5,7 @@ from pypdf import PdfReader
 from sentence_transformers import SentenceTransformer
 
 #load pdfs
-def load_pdf (pdf_path):
+def load_pdf (Pdf_path):
   reader = PdfReader(str(Pdf_path)) 
   mypages = [i.extract_text() or "" for i in reader.pages]
   full_text = "\n".join(mypages).strip()

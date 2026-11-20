@@ -1,6 +1,7 @@
+
 streamlit
-pypdf
-sentance-transformer
 faiss-cpu
-groq
 numpy
+groq
+pypdf
+sentence-transformers

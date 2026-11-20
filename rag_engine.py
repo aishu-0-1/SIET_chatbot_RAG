@@ -74,6 +74,7 @@ def ask_rag (question, embed_model, chunks, index, api_key, num_chunks, model_na
     model = model_name,
     messages = [{"role" : "user",
                  "content" : prompt}],
-                 temperature = 0.3,
+                
+    temperature = 0.3,
   )
-  return.response.choices[0].message.conten
+  return response.choices[0].message.conten
